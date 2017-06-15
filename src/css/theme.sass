@@ -1,0 +1,77 @@
+@import ~susy/sass/susy
+@import settings
+
+// Color.
+html
+    background-color: $primary-color
+    color: contrasted($primary-color)
+
+// Font size.
+body
+    font-size: 70%
+
+@include susy-breakpoint($mobile)
+    body
+        font-size: 80%
+
+@include susy-breakpoint($tablet)
+    body
+        font-size: 90%
+
+@include susy-breakpoint($desktop)
+    body
+        font-size: 100%
+
+// Font family.
+html
+    font-family: $text-font
+
+h1, h2, h3, h4, h5, h6
+    font-family: $title-font
+
+h1
+    font-size: $large-text-size
+h2
+    font-size: $title-text-size
+h3
+    font-size: $subtitle-text-size
+button, label, li, a, p
+    font-size: $body-text-size
+
+// General styles.
+a
+    text-decoration: none
+    color: inherit
+
+    &:hover
+        background-color: $secondary-color
+        color: contrasted($secondary-color)
+        border-radius: 10%
+
+button
+    background-color: $primary-color
+    color: contrasted($primary-color)
+    text-transform: uppercase
+    padding: 1% 3%
+    border: 2px solid $secondary-color
+    border-radius: 15%
+    box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.75)
+    cursor: pointer
+
+    &:hover
+        background-color: invert($secondary-color)
+        color: contrasted(invert($secondary-color))
+        box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.75)
+
+input, textarea
+    font-family: $text-font
+
+textarea
+    resize: none
+
+ul
+    list-style: none
+    padding-left: 0
+
+h1
+    margin: 0

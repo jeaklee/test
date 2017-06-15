@@ -1,0 +1,36 @@
+@function isDark($color)
+    @if lightness($color) < 50
+        @return true
+    @else
+        @return false
+
+@function contrasted($color)
+    @if isDark($color)
+        @return #ffffff
+    @else
+        @return #000000
+
+// Media queries.
+$mobile: 350px
+$tablet: 600px
+$desktop: 800px
+
+// Font settings.
+$title-font: 'Patua One', cursive
+$text-font: 'Open Sans', sans-serif
+
+$large-text-size: 2em
+$title-text-size: 1.5em
+$subtitle-text-size: 1.25em
+$body-text-size: 1em
+
+// Color settings.
+$primary-color: white
+$secondary-color: #eee
+$ternary-color: lightblue
+
+// Style settings.
+$separator: 1px solid contrasted($primary-color)
+
+// Dependency settings.
+$susy: layout(12 1/2 fluid float after)

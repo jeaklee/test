@@ -1,0 +1,72 @@
+@import ~susy/sass/susy
+@import settings
+
+// Header section
+main > header
+    @include full
+    background: transparent url("../img/construction-site.jpg") no-repeat center center
+    min-height: 200px
+    text-align: center
+    position: relative
+
+    span
+        display: block
+        font-size: 3em
+        margin-top: 7%
+        color: white
+
+    button
+        margin-top: 1%
+
+@include susy-breakpoint($desktop)
+    main > header
+        min-height: 350px
+
+// Bullet points section
+#bullet
+    @include container(90%)
+
+    article
+        @include full
+        margin-top: 3%
+
+        img
+            @if isDark($primary-color)
+                background-color: contrasted($primary-color)
+                border-radius: 100%
+                filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100, finishopacity=0, style=2)
+            padding: 7px
+            width: 6%
+        h1
+            @include span(last 10)
+        p
+            @include full
+
+@include susy-breakpoint($mobile)
+    #bullet article p
+        @include gallery(6)
+
+@include susy-breakpoint($tablet)
+    #bullet article
+        @include gallery(6)
+
+// Form section
+main > form
+    @include container
+    background-color: $ternary-color
+    color: contrasted($ternary-color)
+    margin: 2% 0
+    padding: 4% 5%
+
+    *
+        @include full
+
+    textarea
+        height: 10em
+
+    button[type="submit"]
+        margin-top: 2%
+
+@include susy-breakpoint($mobile)
+    main > form
+        padding: 4% 20%
